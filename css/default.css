@@ -59,10 +59,12 @@ a {
 	position: fixed;
 	-webkit-backface-visibility: hidden;
 	bottom: 0;
-	left: 0;
+	left: 50%;
+	margin-left:-80px;
 	color: #f0f0f0;
 	padding: 20px;
 	font-size: 23px;
+	transition:0.3s;
 }
 
 .js .container > h1 > i{

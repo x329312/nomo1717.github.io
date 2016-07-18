@@ -43,8 +43,8 @@ $special = $event.special.debouncedresize = {
 // https://github.com/desandro/imagesloaded
 
 // $('#my-container').imagesLoaded(myFunction)
-// execute a callback when all images have loaded.
-// needed because .load() doesn't work on cached images
+// execute a callback when all img have loaded.
+// needed because .load() doesn't work on cached img
 
 // callback function gets image collection as argument
 //  this is the container
@@ -98,10 +98,10 @@ $.fn.imagesLoaded = function( callback ) {
 			return;
 		}
 
-		// store element in loaded images array
+		// store element in loaded img array
 		loaded.push( img );
 
-		// keep track of broken and properly loaded images
+		// keep track of broken and properly loaded img
 		if ( isBroken ) {
 			broken.push( img );
 		} else {
@@ -116,14 +116,14 @@ $.fn.imagesLoaded = function( callback ) {
 			deferred.notifyWith( $(img), [ isBroken, $images, $(proper), $(broken) ] );
 		}
 
-		// call doneLoading and clean listeners if all images are loaded
+		// call doneLoading and clean listeners if all img are loaded
 		if ( $images.length === loaded.length ){
 			setTimeout( doneLoading );
 			$images.unbind( '.imagesLoaded' );
 		}
 	}
 
-	// if no images, trigger immediately
+	// if no img, trigger immediately
 	if ( !$images.length ) {
 		doneLoading();
 	} else {
@@ -148,7 +148,7 @@ $.fn.imagesLoaded = function( callback ) {
 				return;
 			}
 
-			// cached images don't fire load sometimes, so we reset src, but only when
+			// cached img don't fire load sometimes, so we reset src, but only when
 			// dealing with IE, or image is complete (loaded) and failed manual check
 			// webkit hack from http://groups.google.com/group/jquery-dev/browse_thread/thread/eee6ab7b2da50e1f
 			if ( el.readyState || el.complete ) {
@@ -196,7 +196,7 @@ var Gallery = (function() {
 	function init( settings ) {
 
 		Gallery.settings = $.extend( true, {}, defaults, settings );
-		// preload images
+		// preload img
 		$itemsContainer.imagesLoaded( buildRoom );
 
 	}
